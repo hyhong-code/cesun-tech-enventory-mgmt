@@ -1,0 +1,28 @@
+{
+  "name": "cesun-tech",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.25"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyhong-code/cesun-tech-enventory-mgmt.git"
+  },
+  "keywords": [],
+  "author": "haiyanghong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hyhong-code/cesun-tech-enventory-mgmt/issues"
+  },
+  "homepage": "https://github.com/hyhong-code/cesun-tech-enventory-mgmt#readme"
+}
