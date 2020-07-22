@@ -2,6 +2,7 @@ const CustomError = require("../utils/customError");
 
 // Development enviroment
 const sendErrorDev = (err, res) => {
+  console.log(err);
   res.status(err.statusCode).json({
     status: err.status,
     error: err,
@@ -38,12 +39,9 @@ const handleCastErrorDB = (error) => {
 // Handle mongoose Duplicate keys error
 const handleDuplicateKeyDB = (error) => {
   const message = Object.keys(error.keyValue)
-    .map(
-      (key) =>
-        `Value "${error.keyValue[key]}" is already taken for field "${key}"`
-    )
+    .map((key) => `${key}: "${error.keyValue[key]}" is already taken.`)
     .join(", ");
-  return new CustomError(`Duplicate key: ${message}`, 400);
+  return new CustomError(message, 400);
 };
 
 // Handle mongoose Validation error
