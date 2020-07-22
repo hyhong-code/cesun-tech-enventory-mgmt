@@ -33,6 +33,16 @@ const productSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  quantity: {
+    type: Number,
+    validator: function (v) {
+      return v === parseInt(v);
+    },
+    message: "Quantity must be a whole number",
+  },
+  quantityUpdatedAt: {
+    type: Date,
+  },
 });
 
 // Stores QR Code that contains product id
