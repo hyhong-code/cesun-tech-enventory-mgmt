@@ -52,6 +52,11 @@ adminSchema.pre("save", async function (next) {
   next();
 });
 
+// Compare if given password is correct
+adminSchema.correctPassword = async (plainPassword) => {
+  return await bcrypt.compare(plainPassword, this.password);
+};
+
 // Signs and returns a jwt
 adminSchema.methods.signJwtToken = () => {
   const payload = { id: this.id };
